@@ -26,16 +26,18 @@ body {
     width: 50vmax;
     height: 50vmax;
     padding-top: 15vmax;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: url(../img/tomato.jpg) bottom/cover no-repeat;
-    border-radius: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 25px #0B0E13;
 }
 
 input[type="button"] {
-    background-color: #130A0D88;
+    background-color: #130A0D;
     padding: 5px 15px;
     margin-bottom: 15px;
     border: 1px solid #0C070B;
@@ -63,6 +65,11 @@ input[type="button"]:active {
 }
 
 p, a {
-    padding: 10vh 0 15px 0;
-    font-size: 0.75rem;
+    padding: 5vmax 0 15px 0;
+    font-size: 0.7rem;
+    color: #ffffff99;
+    transition: 0.1s;
+}
+a:hover {
+    color: #ffffffcc;
 }
