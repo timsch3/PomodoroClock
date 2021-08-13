@@ -62,7 +62,7 @@ input[type="button"]:active {
 }
 
 p, a {
-    padding: 5vmax 0 15px 0;
+    margin: 5vmax 0 15px 0;
     font-size: 0.7rem;
     color: #ffffff99;
     transition: 0.1s;
