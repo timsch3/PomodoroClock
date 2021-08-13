@@ -1,2 +1,2 @@
 # SimpleBeautifulPomodoroClock
-Made a really simple and beautiful Pomodoro clock: https://timsch3.github.io/SimpleBeautifulPomodoroClock/
+My try at a simple Pomodoro clock with a clean and non-distracting look: https://timsch3.github.io/SimpleBeautifulPomodoroClock/
