@@ -57,6 +57,7 @@ input[type="button"]:active {
 }
 
 #timerOutput {
+    font-size: 3rem;
     padding-bottom: 30px;
 }
 
