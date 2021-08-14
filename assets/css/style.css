@@ -85,7 +85,6 @@ a:hover {
 
 /* Mobile devices */
 @media only screen and (max-width: 500px) {
-    /* Background */
     #clockWrapper {
         width: 100%;
         height: 100%;
