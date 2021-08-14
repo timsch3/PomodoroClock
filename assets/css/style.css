@@ -2,6 +2,7 @@
     font-family: OSCL;
     src: url(../fonts/OpenSansCondensed-Light.ttf);
 }
+/* CSS reset & standard styles */
 * {
     padding: 0;
     margin: 0;
@@ -9,7 +10,7 @@
     letter-spacing: 0.75px;
     color: #fff;
 }
-
+/* Background and clock "window" */
 body {
     width: 100vw;
     height: 100vh;
@@ -18,12 +19,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#messageOutput {
-    font-size: 1.75rem;
-    text-align: right;
-    padding-top: 10vh;
 }
 #clockWrapper {
     width: 75vh;
@@ -36,6 +31,12 @@ body {
     background: url(../img/tomato.jpg) bottom/cover no-repeat;
     border-radius: 50%;
     box-shadow: 0 0 50px 50px #0B0E13;
+}
+/* Clock parts */
+#messageOutput {
+    font-size: 1.75rem;
+    text-align: right;
+    padding-top: 10vh;
 }
 #bottomSectionWrapper {
     display: flex;
@@ -71,7 +72,7 @@ input[type="button"]:active {
     font-size: 5rem;
     color: #999;
 }
-
+/* Photo credits */
 p, a {
     margin: 5vmax 0 15px 0;
     font-size: 0.75rem;
@@ -80,4 +81,17 @@ p, a {
 }
 a:hover {
     color: #ffffffcc;
+}
+
+/* Mobile devices */
+@media only screen and  (max-width: 500px) {
+    /* Background */
+    #clockWrapper {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: url(../img/tomato.jpg) bottom/cover no-repeat;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }

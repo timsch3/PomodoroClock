@@ -31,7 +31,7 @@ function stopTime() {
     let mins, secs
     mins = ~~(passedSecs % 3600 / 60)
     secs = ~~(passedSecs % 60)
-    if (mins < 25) { // mins < 25
+    if (secs < 1) { // mins < 25
         output.innerHTML = mins.toString().padStart(2, "0")+":"+secs.toString().padStart(2, "0")
     }
     else {
