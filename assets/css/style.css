@@ -6,7 +6,6 @@
     padding: 0;
     margin: 0;
     font-family: OSCL, sans-serif;
-    font-size: 1.3rem;
     letter-spacing: 0.75px;
     color: #fff;
 }
@@ -22,7 +21,7 @@ body {
 }
 
 #messageOutput {
-    font-size: 1rem;
+    font-size: 1.75rem;
     text-align: right;
     padding-top: 10vh;
 }
@@ -45,6 +44,7 @@ body {
     padding-bottom: 10vh;
 }
 input[type="button"] {
+    font-size: 1.5rem;
     background-color: #130A0D;
     border: 1px solid #310E10;
     padding: 5px 15px;
@@ -68,13 +68,13 @@ input[type="button"]:active {
     transform: scale(0.95);
 }
 #timerOutput {
-    font-size: 3rem;
+    font-size: 5rem;
     color: #999;
 }
 
 p, a {
     margin: 5vmax 0 15px 0;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     color: #ffffff99;
     transition: 0.1s;
 }
