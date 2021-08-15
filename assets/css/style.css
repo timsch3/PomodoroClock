@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: url(../img/tomato.jpg) center -55px/cover no-repeat;
+    background: url(../img/tomato.jpg) center -100px/180% no-repeat;
     border-radius: 50%;
     box-shadow: 0 0 50px 50px #0B0E13;
 }
