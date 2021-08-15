@@ -3,68 +3,78 @@ let passedSecs = 0
 let timeoutVar
 let timerStarted = false
 let intervalCount = 1
-let output = document.getElementById("timerOutput")
-let message = document.getElementById("messageOutput")
+let timerOutput = document.getElementById("timerOutput")
+let timeLeftOutput = document.getElementById("timeLeftOutput")
+let messageOutput = document.getElementById("messageOutput")
 let sound = new Audio('assets/audio/bell.mp3')
 
 // Handling timer running and stopped
 function toggleTimer() {
     if (!timerStarted) {
-        output.style.color = "#fff"
-        output.innerHTML = "00:00" // show 00:00 on stop
-        message.innerHTML = "Pomodoro no. " + intervalCount
-        startSecs = ~~(Date.now() / 1000)
-        timeoutVar = setInterval(stopTime, 1000)
+        timerOutput.style.color = "#fff"
+        timeLeftOutput.style.color = "#999"
+        messageOutput.innerHTML = "Pomodoro no. " + intervalCount
+        startSecs = ~~(Date.now() / 1000) // get unix time seconds
+        timeoutVar = setInterval(stopTime, 1000) // run stopTime() every second
         timerStarted = true
     }
-    else {
-        output.style.color = "#999"
-        clearInterval(timeoutVar)
+    else { //when user presses stop
+        resetDisplay()
+        clearInterval(timeoutVar) //stop running stopTime()
         timerStarted = false
-        output.innerHTML = "00:00"
     }
 }
 
-// Monitoring passed time and providing output
+// Calculating passed/left time and providing output
 function stopTime() {
     passedSecs = ~~(Date.now() / 1000) - startSecs
     let mins, secs
     mins = ~~(passedSecs % 3600 / 60)
     secs = ~~(passedSecs % 60)
-    if (mins < 25) { // mins < 25
-        output.innerHTML = mins.toString().padStart(2, "0")+":"+secs.toString().padStart(2, "0")
+    if (mins < 25) { // CHANGE BACK TO: mins < 25
+        timerOutput.innerHTML = mins.toString().padStart(2, "0") + ":" + secs.toString().padStart(2, "0")
+        let secsLeft = 60 - secs
+        secsLeft == 60 ? secsLeft = 59 : secsLeft
+        let minsLeft = 25 - mins
+        minsLeft == 25 ? minsLeft = 24 : minsLeft
+        timeLeftOutput.innerHTML = "-" + minsLeft.toString().padStart(2, "0") + ":" + secsLeft.toString().padStart(2, "0")
     }
-    else {
-        output.style.color = "#999"
-        output.innerHTML = "25:00"
+    else { // when an interval is over
+        resetDisplay()
         clearInterval(timeoutVar)
         timerStarted = false
         if (intervalCount == 1) {
-            message.innerHTML = "First pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "First pomodoro over,<br>take a little break!"
             intervalCount++
         }
         else if (intervalCount == 2) {
-            message.innerHTML = "Second pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "Second pomodoro over,<br>take a little break!"
             intervalCount++
         }
         else if (intervalCount == 3) {
-            message.innerHTML = "Third pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "Third pomodoro over,<br>take a little break!"
             intervalCount++
         }
         else if (intervalCount == 4) {
-            message.innerHTML = "Fourth pomodoro over,<br>take a longer break!"
+            messageOutput.innerHTML = "Fourth pomodoro over,<br>take a longer break!"
             intervalCount = 1
         }
         sound.play()
     }
 }
 
-// Resetting everything
-function reset() {
+function resetDisplay() { // Reset output values and colors
+    timerOutput.style.color = "#999"
+    timeLeftOutput.style.color = "#444"
+    timerOutput.innerHTML = "00:00"
+    timeLeftOutput.innerHTML = "-25:00"
+}
+function reset() { // Reset everything (when user presses reset)
     clearInterval(timeoutVar)
     timerStarted = false
     intervalCount = 1
-    output.style.color = "#999"
-    output.innerHTML = "00:00"
-    message.innerHTML = "Start your first pomodoro."
+    timerOutput.style.color = "#999"
+    timerOutput.innerHTML = "00:00"
+    timeLeftOutput.innerHTML = "-25:00"
+    messageOutput.innerHTML = "Start your first pomodoro."
 }

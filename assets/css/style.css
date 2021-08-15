@@ -72,6 +72,10 @@ input[type="button"]:active {
     font-size: 5rem;
     color: #999;
 }
+#timeLeftOutput {
+    font-size: 1rem;
+    color: #444;
+}
 /* Photo credits */
 p, a {
     margin: 5vmax 0 15px 0;
