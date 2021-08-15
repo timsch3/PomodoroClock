@@ -15,18 +15,18 @@ function toggleTimer() {
         timeLeftOutput.style.color = "#999"
         messageOutput.innerHTML = "Pomodoro no. " + intervalCount
         startSecs = ~~(Date.now() / 1000) // get unix time seconds
-        timeoutVar = setInterval(stopTime, 1000) // run stopTime() every second
+        timeoutVar = setInterval(trackTime, 1000) // run trackTime() every second
         timerStarted = true
     }
     else { //when user presses stop
         resetDisplay()
-        clearInterval(timeoutVar) //stop running stopTime()
+        clearInterval(timeoutVar) //stop running trackTime()
         timerStarted = false
     }
 }
 
 // Calculating passed/left time and providing output
-function stopTime() {
+function trackTime() {
     passedSecs = ~~(Date.now() / 1000) - startSecs
     let mins, secs
     mins = ~~(passedSecs % 3600 / 60)
@@ -34,7 +34,8 @@ function stopTime() {
     if (mins < 25) { // <========== ALWAYS CHANGE BACK TO: mins < 25
         timerOutput.innerHTML = mins.toString().padStart(2, "0") + ":" + secs.toString().padStart(2, "0")
         let minsLeft = 25 - mins
-        timeLeftOutput.innerHTML = minsLeft.toString() + " minutes left"
+        let timeLeftString = minsLeft == 1 ? " minute left" : " minutes left"
+        timeLeftOutput.innerHTML = minsLeft.toString() + timeLeftString
     }
     else { // when an interval is over
         resetDisplay()

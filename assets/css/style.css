@@ -13,24 +13,23 @@
 /* Background and clock "window" */
 body {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 15px);
+    padding-top: 15px;
     background: linear-gradient(#090910, #0B0E13, #090C11, #090910, #090C11);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 #clockWrapper {
     width: 75vh;
     height: 75vh;
-    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background: url(../img/tomato.jpg) center -100px/180% no-repeat;
     border-radius: 50%;
-    box-shadow: 0 0 50px 50px #0B0E13;
 }
 /* Clock parts */
 #messageOutput {
@@ -42,30 +41,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
 }
 input[type="button"] {
     font-size: 1.5rem;
-    background-color: #130A0D;
-    border: 1px solid #310E10;
+    background-color: #130A0D99;
+    border: 1px solid #41181a;
     padding: 5px 15px;
-    margin-bottom: 15px;
     border-radius: 5px;
     transition: 0.1s;
+    
 }
 input[type="button"]:hover {
-    background-color: #11070b;
+    background-color: #11070baa;
     border-top: 1px solid #7B261Dcc;
     border-left: 1px solid #7B261Dcc;
     border-bottom: 1px solid #A9503Acc;
     border-right: 1px solid #A9503Acc;
 }
 input[type="button"]:active {
-    background-color: #0f0509;
-    border-top: 1px solid #A9503A66;
-    border-left: 1px solid #A9503A66;
-    border-bottom: 1px solid #7B261D99;
-    border-right: 1px solid #7B261D99;
+    background-color: #0f0509dd;
+    border-top: 1px solid #A9503A88;
+    border-left: 1px solid #A9503A88;
+    border-bottom: 1px solid #7B261Daa;
+    border-right: 1px solid #7B261Daa;
     transform: scale(0.95);
 }
 #timerOutput {
@@ -79,7 +78,7 @@ input[type="button"]:active {
 }
 /* Photo credits */
 p, a {
-    margin: 5vmax 0 15px 0;
+    padding-bottom: 15px;
     font-size: 0.75rem;
     color: #ffffff66;
     transition: 0.1s;
@@ -89,13 +88,20 @@ a:hover {
 }
 
 /* Mobile devices */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
+    body {
+        height: 100vh;
+        padding-top: 0;
+    }
     #clockWrapper {
         width: 100%;
         height: 100%;
         margin: 0;
-        background: url(../img/tomato-small.jpg) center -65px/cover no-repeat;
+        background: url(../img/tomato-small.jpg) center -80px/cover no-repeat;
         border-radius: 0;
         box-shadow: none;
+    }
+    #bottomSectionWrapper {
+        padding-bottom: 19vh;
     }
 }
