@@ -31,13 +31,10 @@ function stopTime() {
     let mins, secs
     mins = ~~(passedSecs % 3600 / 60)
     secs = ~~(passedSecs % 60)
-    if (mins < 25) { // CHANGE BACK TO: mins < 25
+    if (mins < 25) { // <========== ALWAYS CHANGE BACK TO: mins < 25
         timerOutput.innerHTML = mins.toString().padStart(2, "0") + ":" + secs.toString().padStart(2, "0")
-        let secsLeft = 60 - secs
-        secsLeft == 60 ? secsLeft = 59 : secsLeft
         let minsLeft = 25 - mins
-        minsLeft == 25 ? minsLeft = 24 : minsLeft
-        timeLeftOutput.innerHTML = "-" + minsLeft.toString().padStart(2, "0") + ":" + secsLeft.toString().padStart(2, "0")
+        timeLeftOutput.innerHTML = minsLeft.toString() + " minutes left"
     }
     else { // when an interval is over
         resetDisplay()
@@ -67,14 +64,12 @@ function resetDisplay() { // Reset output values and colors
     timerOutput.style.color = "#999"
     timeLeftOutput.style.color = "#444"
     timerOutput.innerHTML = "00:00"
-    timeLeftOutput.innerHTML = "-25:00"
+    timeLeftOutput.innerHTML = "25 minutes left"
 }
 function reset() { // Reset everything (when user presses reset)
+    resetDisplay()
     clearInterval(timeoutVar)
     timerStarted = false
     intervalCount = 1
-    timerOutput.style.color = "#999"
-    timerOutput.innerHTML = "00:00"
-    timeLeftOutput.innerHTML = "-25:00"
     messageOutput.innerHTML = "Start your first pomodoro."
 }

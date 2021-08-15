@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: url(../img/tomato.jpg) bottom/cover no-repeat;
+    background: url(../img/tomato.jpg) center -55px/cover no-repeat;
     border-radius: 50%;
     box-shadow: 0 0 50px 50px #0B0E13;
 }
@@ -73,18 +73,19 @@ input[type="button"]:active {
     color: #999;
 }
 #timeLeftOutput {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: #444;
+    letter-spacing: 1.5px;
 }
 /* Photo credits */
 p, a {
     margin: 5vmax 0 15px 0;
     font-size: 0.75rem;
-    color: #ffffff99;
+    color: #ffffff66;
     transition: 0.1s;
 }
 a:hover {
-    color: #ffffffcc;
+    color: #ffffff99;
 }
 
 /* Mobile devices */
@@ -93,7 +94,7 @@ a:hover {
         width: 100%;
         height: 100%;
         margin: 0;
-        background: url(../img/tomato-small.jpg) bottom/cover no-repeat;
+        background: url(../img/tomato-small.jpg) center -65px/cover no-repeat;
         border-radius: 0;
         box-shadow: none;
     }
