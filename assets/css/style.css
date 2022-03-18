@@ -1,147 +1,144 @@
 @font-face {
-    font-family: OSCL;
-    src: url(../fonts/OpenSansCondensed-Light.ttf);
+  font-family: OSCL;
+  src: url(../fonts/OpenSansCondensed-Light.ttf);
 }
 /* CSS reset & standard styles */
 * {
-    padding: 0;
-    margin: 0;
-    font-family: OSCL, sans-serif;
-    letter-spacing: 0.75px;
-    color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: OSCL, sans-serif;
+  letter-spacing: 0.75px;
+  color: #fff;
 }
 /* Background and clock "window" */
 body {
-    width: 100vw;
-    height: calc(100vh - 15px);
-    padding-top: 15px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#090910), color-stop(#0B0E13), color-stop(#090C11), color-stop(#090910), to(#090C11));
-    background: -o-linear-gradient(#090910, #0B0E13, #090C11, #090910, #090C11);
-    background: linear-gradient(#090910, #0B0E13, #090C11, #090910, #090C11);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  width: 100vw;
+  height: calc(100vh - 15px);
+  padding-top: 15px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#090910),
+    color-stop(#0b0e13),
+    color-stop(#090c11),
+    color-stop(#090910),
+    to(#090c11)
+  );
+  background: -o-linear-gradient(#090910, #0b0e13, #090c11, #090910, #090c11);
+  background: linear-gradient(#090910, #0b0e13, #090c11, #090910, #090c11);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 #clockWrapper {
-    width: 75vh;
-    height: 75vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background: url(../img/tomato.jpg) center -100px/180% no-repeat;
-    border-radius: 50%;
+  width: 75vh;
+  height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url(../img/tomato.jpg) center -100px/180% no-repeat;
+  border-radius: 50%;
 }
 /* Clock parts */
 #messageOutput {
-    font-size: 1.75rem;
-    text-align: right;
-    padding-top: 10vh;
+  font-size: 1.75rem;
+  text-align: right;
+  padding: 1em 0;
 }
-#bottomSectionWrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-bottom: 5vh;
+input[type='button'] {
+  font-size: 1.5rem;
+  background-color: #130a0d99;
+  border: 1px solid #41181a;
+  padding: 5px 15px;
+  border-radius: 5px;
+  -webkit-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
 }
-input[type="button"] {
-    font-size: 1.5rem;
-    background-color: #130A0D99;
-    border: 1px solid #41181a;
-    padding: 5px 15px;
-    border-radius: 5px;
-    -webkit-transition: 0.15s;
-    -o-transition: 0.15s;
-    transition: 0.15s;
-    
+input[type='button']:hover {
+  background-color: #11070baa;
+  border-top: 1px solid #7b261dcc;
+  border-left: 1px solid #7b261dcc;
+  border-bottom: 1px solid #a9503acc;
+  border-right: 1px solid #a9503acc;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
-input[type="button"]:hover {
-    background-color: #11070baa;
-    border-top: 1px solid #7B261Dcc;
-    border-left: 1px solid #7B261Dcc;
-    border-bottom: 1px solid #A9503Acc;
-    border-right: 1px solid #A9503Acc;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-}
-input[type="button"]:active {
-    background-color: #0f0509dd;
-    border-top: 1px solid #A9503A88;
-    border-left: 1px solid #A9503A88;
-    border-bottom: 1px solid #7B261Daa;
-    border-right: 1px solid #7B261Daa;
-    -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s;
+input[type='button']:active {
+  background-color: #0f0509dd;
+  border-top: 1px solid #a9503a88;
+  border-left: 1px solid #a9503a88;
+  border-bottom: 1px solid #7b261daa;
+  border-right: 1px solid #7b261daa;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
 }
 #timerOutput {
-    font-size: 5rem;
-    color: #999;
+  font-size: 5rem;
+  color: #999;
 }
 #timeLeftOutput {
-    font-size: 1.25rem;
-    color: #444;
-    letter-spacing: 1.5px;
+  font-size: 1.25rem;
+  color: #444;
+  letter-spacing: 1.5px;
+  margin-bottom: 10vh;
 }
 /* Photo credits */
-p, a {
-    padding-bottom: 15px;
-    font-size: 0.75rem;
-    color: #ffffff66;
-    -webkit-transition: 0.1s;
-    -o-transition: 0.1s;
-    transition: 0.1s;
+p,
+a {
+  padding-bottom: 15px;
+  font-size: 0.75rem;
+  color: #ffffff66;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
 }
 a:hover {
-    color: #ffffff99;
+  color: #ffffff99;
 }
 
 /* Mobile devices */
 @media only screen and (max-width: 550px) {
-    body {
-        height: 100vh;
-        padding-top: 0;
-    }
-    #clockWrapper {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        background: url(../img/tomato-small.jpg) center -80px/cover no-repeat;
-        border-radius: 0;
-        -webkit-box-shadow: none;
-                box-shadow: none;
-    }
-    #bottomSectionWrapper {
-        padding-bottom: 19vh;
-    }
+  body {
+    height: 100vh;
+    padding-top: 0;
+  }
+  #clockWrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url(../img/tomato-small.jpg) center -80px / cover no-repeat;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  #bottomSectionWrapper {
+    padding-bottom: 19vh;
+  }
 }
