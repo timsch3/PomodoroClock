@@ -42,15 +42,15 @@ function trackTime() {
         clearInterval(timeoutVar)
         timerStarted = false
         if (intervalCount == 1) {
-            messageOutput.innerHTML = "First pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "First pomodoro over,<br>take a short break!"
             intervalCount++
         }
         else if (intervalCount == 2) {
-            messageOutput.innerHTML = "Second pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "Second pomodoro over,<br>take a short break!"
             intervalCount++
         }
         else if (intervalCount == 3) {
-            messageOutput.innerHTML = "Third pomodoro over,<br>take a little break!"
+            messageOutput.innerHTML = "Third pomodoro over,<br>take a short break!"
             intervalCount++
         }
         else if (intervalCount == 4) {
